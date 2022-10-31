@@ -1,7 +1,12 @@
 name: test workflow
 run-name: ${{ github.actor }} runs a workflow
 
-on: [push, fork]
+on: 
+  push: 
+  fork:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   echo:
