@@ -1,4 +1,5 @@
 name: test workflow
+run-name: ${{ github.actor }} runs a workflow
 
 on: [push, fork]
 
