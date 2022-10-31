@@ -1,10 +1,17 @@
 name: test workflow
+run-name: ${{ github.actor }} runs a workflow
 
-on: [push, fork]
+on: 
+  push: 
+  fork:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   echo:
     runs-on: windows
     steps:
-      - run: echo "Hello, world!"
-
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: python ./hello-world.py
